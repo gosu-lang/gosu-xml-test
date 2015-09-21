@@ -15,7 +15,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <gosu.version>1-spec-SNAPSHOT</gosu.version>
+    <gosu.version>1.8</gosu.version>
     <dist.man.repo.url>http://gosu-lang.org/nexus/content/repositories/gosu</dist.man.repo.url>
     <dist.man.snapshotrepo.url>http://gosu-lang.org/nexus/content/repositories/snapshots</dist.man.snapshotrepo.url>
   </properties>
@@ -52,11 +52,6 @@
       <artifactId>gosu-xml</artifactId>
       <version>0.1-SNAPSHOT</version>
       <!--<scope>runtime</scope>-->
-    </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>1.4.187</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
