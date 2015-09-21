@@ -4,6 +4,7 @@ uses org.junit.Assert
 uses org.junit.Test
 uses bootstrap.shiporder.Shiporder
 uses bootstrap.shiporder.anonymous.elements.Shiporder_Item
+
 class BootstrapTest {
 
   @Test
