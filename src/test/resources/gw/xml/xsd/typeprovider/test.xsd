@@ -1,0 +1,255 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xsd:element name="FacetTest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="FractionDigits2">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:decimal">
+              <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="LengthString5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:length value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="LengthHexBinary5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:hexBinary">
+              <xsd:length value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="LengthBase64Binary5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:base64Binary">
+              <xsd:length value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MaxExclusive10">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:maxExclusive value="10"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MaxInclusive10">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:maxInclusive value="10"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MinExclusive10">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minExclusive value="10"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MinInclusive10">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="10"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MaxLengthString5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MinLengthString5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:minLength value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MaxLengthHexBinary5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:hexBinary">
+              <xsd:maxLength value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MinLengthHexBinary5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:hexBinary">
+              <xsd:minLength value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MaxLengthBase64Binary5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:base64Binary">
+              <xsd:maxLength value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="MinLengthBase64Binary5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:base64Binary">
+              <xsd:minLength value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="PatternAllCapitalEnglishLetters">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:pattern value="[A-Z]+"/> <!-- All capital english letters -->
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="TotalDigits5">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:decimal">
+              <xsd:totalDigits value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="Min5" type="Min5"/>
+        <xsd:element name="Min5Max8ThroughInheritence">
+          <xsd:simpleType>
+            <xsd:restriction base="Min5">
+              <xsd:maxInclusive value="8"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="Min5Max8">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="5"/>
+              <xsd:maxInclusive value="8"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="AllowsPattern1Or2" type="AllowsPattern1Or2"/>
+        <xsd:element name="AllowsPattern2ButNot1Or3">
+          <xsd:simpleType>
+            <xsd:restriction base="AllowsPattern1Or2">
+              <xsd:pattern value="2"/>
+              <xsd:pattern value="3"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="PositiveInteger" type="xsd:positiveInteger"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="FloatingPointTest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="float" type="xsd:float" minOccurs="0"/>
+        <xsd:element name="double" type="xsd:double" minOccurs="0"/>
+        
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="Min5">
+    <xsd:restriction base="xsd:int">
+      <xsd:minInclusive value="5"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="SubstitutionGroupHead">
+    <xsd:sequence>
+      <xsd:element name="ElementFromHead" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="SubstitutionGroupMember">
+    <xsd:complexContent>
+      <xsd:extension base="SubstitutionGroupHead">
+        <xsd:sequence>
+          <xsd:element name="ElementFromMember" type="xsd:short"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="SubstitutionGroupHead" type="SubstitutionGroupHead"/>
+
+  <xsd:element name="SubstitutionGroupMember" substitutionGroup="SubstitutionGroupHead" type="SubstitutionGroupMember"/>
+
+  <xsd:element name="SubstitutionGroupParent">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="SubstitutionGroupHead" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ElementSimpleType" type="xsd:int"/>
+
+  <xsd:element name="SimpleTypePropertyTest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ElementSimpleType"/>
+        <xsd:element name="ElementSimpleTypeInline" type="xsd:int"/>
+        <xsd:element name="ElementSimpleContent">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:int">
+                <xsd:attribute name="Attr" type="xsd:int"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ElementOfListType" type="RestrictsListType"/>
+
+  <xsd:simpleType name="ListType">
+    <xsd:list itemType="xsd:int"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="RestrictsListType">
+    <xsd:restriction base="ListType">
+      <xsd:length value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:element name="ElementWithoutID"/>
+
+  <xsd:element name="ElementWithID">
+    <xsd:complexType>
+      <xsd:attribute name="id" type="xsd:ID"/>
+      <xsd:attribute name="ref" type="xsd:IDREF"/>
+      <xsd:attribute name="refs" type="xsd:IDREFS"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ListOfStringMinLength1">
+    <xsd:simpleType>
+      <xsd:restriction base="ListOfString">
+        <xsd:minLength value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+
+  <xsd:simpleType name="ListOfString">
+    <xsd:list itemType="xsd:string"/>
+  </xsd:simpleType>
+
+  <xsd:element name="Boolean" type="xsd:boolean"/>
+
+
+  <xsd:simpleType name="AllowsPattern1Or2">
+    <xsd:restriction base="xsd:int">
+      <xsd:pattern value="1"/>
+      <xsd:pattern value="2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
