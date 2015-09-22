@@ -1,0 +1,38 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:dlank" xmlns:dlank="urn:dlank">
+    <element name="RootWithMultipleChoices">
+        <complexType>
+            <choice minOccurs="0" maxOccurs="unbounded">
+                <element name="Foo" type="string"/>
+                <element name="Bar" type="string"/>
+                <element name="Baz" type="string"/>
+            </choice>
+        </complexType>
+    </element>
+    <element name="RootWithSingleChoice">
+        <complexType>
+            <choice minOccurs="0" maxOccurs="1">
+                <element name="Foo" type="string"/>
+                <element name="Bar" type="string"/>
+                <element name="Baz" type="string"/>
+            </choice>
+        </complexType>
+    </element>
+    <element name="RootWithMultipleSequences">
+        <complexType>
+            <sequence minOccurs="0" maxOccurs="unbounded">
+                <element name="Foo" type="string"/>
+                <element name="Bar" type="string"/>
+                <element name="Baz" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RootWithSingleSequence">
+        <complexType>
+            <sequence minOccurs="0" maxOccurs="1">
+                <element name="Foo" type="string"/>
+                <element name="Bar" type="string"/>
+                <element name="Baz" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
