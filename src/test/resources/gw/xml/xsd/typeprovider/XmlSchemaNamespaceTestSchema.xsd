@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="nsuri1" xmlns:tns="nsuri1">
+
+  <xs:element name="root" type="tns:rootType"/>
+
+  <xs:complexType name="rootType">
+    <xs:simpleContent>
+      <xs:extension base="xs:QName">
+        <xs:attribute name="attr1" type="xs:QName"/>
+        <xs:attribute name="attr2" type="xs:QName"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="rootSubType">
+    <xs:simpleContent>
+      <xs:extension base="tns:rootType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+</xs:schema>
