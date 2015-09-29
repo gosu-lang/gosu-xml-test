@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           xmlns="http://guidewire.com/XSDTypeLoaderTest"
+           targetNamespace="http://guidewire.com/XSDTypeLoaderTest"
+           xmlns:tns="http://guidewire.com/XSDTypeLoaderTest">
+
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element ref="Root" minOccurs="0"/>
+
+                <!-- Basic XSD types -->
+                <xs:element name="AnyType" minOccurs="0"/>
+                <xs:element name="AnyType2" minOccurs="0"/>
+                <xs:element name="Boolean" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="Byte" type="xs:byte" minOccurs="0"/>
+                <xs:element name="Decimal" type="xs:decimal" minOccurs="0"/>
+                <xs:element name="Double" type="xs:double" minOccurs="0"/>
+                <xs:element name="Float" type="xs:float" minOccurs="0"/>
+                <xs:element name="Int" type="xs:int" minOccurs="0"/>
+                <xs:element name="Integer" type="xs:integer" minOccurs="0"/>
+                <xs:element name="Long" type="xs:long" minOccurs="0"/>
+                <xs:element name="Short" type="xs:short" minOccurs="0"/>
+                <xs:element name="String" type="xs:string" minOccurs="0"/>
+                <xs:element name="UnsignedByte" type="xs:unsignedByte" minOccurs="0"/>
+                <xs:element name="UnsignedShort" type="xs:unsignedShort" minOccurs="0"/>
+                <xs:element name="UnsignedInt" type="xs:unsignedInt" minOccurs="0"/>
+                <xs:element name="UnsignedLong" type="xs:unsignedLong" minOccurs="0"/>
+                <xs:element name="PositiveInteger" type="xs:positiveInteger" minOccurs="0"/>
+                <xs:element name="NonPositiveInteger" type="xs:nonPositiveInteger" minOccurs="0"/>
+                <xs:element name="NegativeInteger" type="xs:negativeInteger" minOccurs="0"/>
+                <xs:element name="NonNegativeInteger" type="xs:nonNegativeInteger" minOccurs="0"/>
+
+                <!-- Misc XSD types -->
+                <xs:element name="NormalizedString" type="xs:normalizedString" minOccurs="0"/>
+                <xs:element name="HexBinary" type="xs:hexBinary" minOccurs="0"/>
+                <xs:element name="Base64Binary" type="xs:base64Binary" minOccurs="0"/>
+                <xs:element name="AnyURI" type="xs:anyURI" minOccurs="0"/>
+                <xs:element name="QNameElem" type="xs:QName" minOccurs="0"/>
+                <xs:element name="NameElem" type="xs:Name" minOccurs="0"/>
+                <xs:element name="NCName" type="xs:NCName" minOccurs="0"/>
+                <xs:element name="Language" type="xs:language" minOccurs="0"/>
+                <xs:element name="NMTOKEN" type="xs:NMTOKEN" minOccurs="0"/>
+                <xs:element name="NMTOKENS" type="xs:NMTOKENS" minOccurs="0"/>
+
+                <!-- Date-related fields -->
+                <xs:element name="Date" type="xs:date" minOccurs="0"/>
+                <xs:element name="Date2" type="xs:date" minOccurs="0"/>
+                <xs:element name="DateTime" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="DateTime2" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="Time" type="xs:time" minOccurs="0"/>
+                <xs:element name="Time2" type="xs:time" minOccurs="0"/>
+                <xs:element name="GYearMonth" type="xs:gYearMonth" minOccurs="0"/>
+                <xs:element name="GYearMonth2" type="xs:gYearMonth" minOccurs="0"/>
+                <xs:element name="GYear" type="xs:gYear" minOccurs="0"/>
+                <xs:element name="GYear2" type="xs:gYear" minOccurs="0"/>
+                <xs:element name="GMonthDay" type="xs:gMonthDay" minOccurs="0"/>
+                <xs:element name="GMonthDay2" type="xs:gMonthDay" minOccurs="0"/>
+                <xs:element name="GDay" type="xs:gDay" minOccurs="0"/>
+                <xs:element name="GDay2" type="xs:gDay" minOccurs="0"/>
+                <xs:element name="GMonth" type="xs:gMonth" minOccurs="0"/>
+                <xs:element name="GMonth2" type="xs:gMonth" minOccurs="0"/>
+                <xs:element name="Entity" type="xs:ENTITY" minOccurs="0"/>
+                <xs:element ref="ENTITYElement" minOccurs="0"/>
+
+                <!-- IDREF -->
+                <xs:element name="IDREF" type="xs:IDREF" minOccurs="0"/>
+                <xs:element name="IDREFS" type="xs:IDREFS" minOccurs="0"/>
+
+                <xs:element name="IndirectIDREF" type="tns:IDREF" minOccurs="0"/>
+                <xs:element name="IndirectIDREFS" type="tns:IDREFS" minOccurs="0"/>
+                <xs:element name="IndirectQName" type="tns:QName" minOccurs="0"/>
+
+                <xs:element name="Union"  type="Union" minOccurs="0"/>
+
+                <xs:element name="Color" type="tns:Color" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="tns:ID" use="optional"/>
+            <xs:attribute name="IDREF_attr" type="xs:IDREF" use="optional"/>
+            <xs:attribute name="IDREFS_attr" type="xs:IDREFS" use="optional"/>
+            <xs:attribute name="ENTITY_attr" type="xs:ENTITY" use="optional"/>
+            <xs:attribute name="IndirectIDREF_attr" type="tns:IDREF" use="optional"/>
+            <xs:attribute name="IndirectIDREFS_attr" type="tns:IDREFS" use="optional"/>
+            <xs:attribute name="IndirectQName_attr" type="tns:QName" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ENTITYElement" type="xs:ENTITY"/>
+
+    <xs:simpleType name="Color">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Red"/>
+            <xs:enumeration value="Green"/>
+            <xs:enumeration value="Blue"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Union">
+        <xs:union memberTypes="xs:int"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="IDREF">
+        <xs:restriction base="xs:IDREF"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="IDREFS">
+        <xs:restriction base="xs:IDREFS"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="QName">
+        <xs:restriction base="xs:QName"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="ID">
+        <xs:restriction base="xs:ID"/>
+    </xs:simpleType>
+
+</xs:schema>
