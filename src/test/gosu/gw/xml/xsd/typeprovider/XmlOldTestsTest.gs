@@ -1,5 +1,6 @@
 package gw.xml.xsd.typeprovider
 
+uses org.junit.Ignore
 uses org.junit.Test
 
 
@@ -24,6 +25,7 @@ class XmlOldTestsTest extends XSDTest {
   }
 
   @Test
+  @Ignore
   function testRootWithSingleSequenceGrouping() {
     // single grouping disappears, and its children appear directly under the root
     var xml = new gw.api.xml.parser2.xsd.typeloader.xsd.xsdrootgroupingtest.RootWithSingleSequence()
