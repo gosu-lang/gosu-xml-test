@@ -1,0 +1,23 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="simpleTypeThatEnumeratesQName">
+    <xs:restriction base="xs:QName">
+      <xs:enumeration value="foo:a" xmlns:foo="urn:a"/>
+      <xs:enumeration value="foo:b" xmlns:foo="urn:b"/>
+      <xs:enumeration value="foo:c" xmlns:foo="urn:c"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="simpleTypeThatEnumeratesString">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="a"/>
+      <xs:enumeration value="b"/>
+      <xs:enumeration value="c"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="simpleTypeThatEnumeratesInt">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
