@@ -1,8 +1,10 @@
 package gw.xml.xsd.typeprovider
 
 uses gw.lang.reflect.IType
+uses gw.xml.XmlElement
 uses gw.xml.XmlSimpleValueException
 uses org.junit.Assert
+
 
 class XSDTest extends Assert {
 
@@ -14,6 +16,10 @@ class XSDTest extends Assert {
     catch ( ex : XmlSimpleValueException) {
       // good
     }
+  }
+
+  function assertXmlEquals(value: XmlElement, expected: XmlElement) {
+    assertEquals(expected.asUTFString(), value.asUTFString());
   }
 
   function assertExceptionThrown(blk : block():void, ex : IType) {
