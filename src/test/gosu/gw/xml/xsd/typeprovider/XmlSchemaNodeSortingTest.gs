@@ -1,7 +1,14 @@
 package gw.xml.xsd.typeprovider
 
-
+uses java.lang.System
+uses java.lang.Integer
+uses java.net.URI
+uses gw.xml.XmlElement
+uses gw.xml.XmlSortException
+uses gw.xsd.w3c.xmlschema.Schema
 uses org.junit.Test
+
+uses javax.xml.namespace.QName
 
 class XmlSchemaNodeSortingTest extends XSDTest {
 
