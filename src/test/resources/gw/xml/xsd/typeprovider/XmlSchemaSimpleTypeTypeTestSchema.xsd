@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="simpleTypeWithMaxInclusive5">
+    <xs:restriction base="xs:int">
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="simpleTypeWithEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="value1"/>
+      <xs:enumeration value="value2"/>
+      <xs:enumeration value="value3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="complexTypeWithMaxInclusive5">
+    <xs:simpleContent>
+      <xs:extension base="simpleTypeWithMaxInclusive5">
+        <xs:attribute name="attr" type="xs:int"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="complexTypeWithEnum">
+    <xs:simpleContent>
+      <xs:extension base="simpleTypeWithEnum">
+        <xs:attribute name="attr" type="xs:int"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

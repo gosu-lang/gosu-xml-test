@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:pl24981" targetNamespace="urn:pl24981">
+
+    <xsd:attribute name="foo" xmlns=""/> <!-- this xmlns="" declaration is used to reproduce the bug described in PL-24981 -->
+
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="child" type="mySimpleType"/> <!-- element type reference -->
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="root2">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="TopLevelElement"/> <!-- element reference -->
+            </xsd:sequence>
+            <xsd:attribute name="attr1" type="mySimpleType"/> <!-- attribute type reference -->
+            <xsd:attribute ref="attr2" /> <!-- attribute reference -->
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="substitutionGroupMember" substitutionGroup="substitutionGroupHead"/> <!-- subst group reference -->
+    <xsd:element name="substitutionGroupHead"/>
+    <xsd:element name="TopLevelElement"/>
+
+    <xsd:simpleType name="mySimpleType">
+        <xsd:restriction base="myBaseSimpleType"/> <!-- restriction base type reference -->
+    </xsd:simpleType>
+
+    <xsd:attribute name="attr2" type="mySimpleType"/>
+
+    <xsd:complexType name="myComplexType">
+        <xsd:complexContent>
+            <xsd:extension base="myBaseComplexType"> <!-- extension base type reference -->
+                <xsd:sequence>
+                    <xsd:element name="child2" type="mySimpleType"/>
+                    <xsd:group ref="myGroup"/> <!-- group reference -->
+                </xsd:sequence>
+                <xsd:attributeGroup ref="myAttributeGroup"/> <!-- attribute group reference -->
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="myBaseComplexType">
+        <xsd:sequence>
+            <xsd:element name="child1" type="mySimpleType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="myBaseSimpleType">
+        <xsd:restriction base="xsd:int"/>
+    </xsd:simpleType>
+
+    <xsd:group name="myGroup">
+        <xsd:sequence>
+            <xsd:element name="child3" type="mySimpleType"/>
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:attributeGroup name="myAttributeGroup">
+        <xsd:attribute name="attr3" type="mySimpleType"/>
+    </xsd:attributeGroup>
+
+    <xsd:simpleType name="myListType">
+        <xsd:list itemType="mySimpleType"/> <!-- list itemType reference -->
+    </xsd:simpleType>
+
+</xsd:schema>
