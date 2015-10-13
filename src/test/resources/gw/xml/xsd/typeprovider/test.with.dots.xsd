@@ -1,0 +1,17 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:dots">
+
+    <xsd:element name="Root" type="xsd:int"/>
+
+    <xsd:element name="dotsOperation">
+      <xsd:complexType>
+        <xsd:attribute name="attr" type="xsd:int"/>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="dotsOperationResponse">
+      <xsd:complexType>
+        <xsd:attribute name="attr" type="xsd:int"/>
+      </xsd:complexType>      
+    </xsd:element>
+
+</xsd:schema>

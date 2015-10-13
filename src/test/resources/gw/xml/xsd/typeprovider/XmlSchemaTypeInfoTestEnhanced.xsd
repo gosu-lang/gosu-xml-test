@@ -1,0 +1,15 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="super"/>
+
+  <xs:complexType name="sub">
+    <xs:complexContent>
+      <xs:restriction base="super"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="super" type="super"/>
+
+  <xs:element name="sub" type="sub" substitutionGroup="super"/>
+
+</xs:schema>

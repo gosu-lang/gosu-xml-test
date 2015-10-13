@@ -1,0 +1,15 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://guidewire.com/includetest.xsd" xmlns="http://guidewire.com/includetest.xsd">
+
+  <xsd:include schemaLocation="included.xsd"/>
+
+  <xsd:element name="ElementFromParentSchema"/>
+
+  <xsd:element name="Root">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ElementFromIncludedSchema"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

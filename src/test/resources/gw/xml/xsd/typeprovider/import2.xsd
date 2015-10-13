@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           xmlns="http://guidewire.com/import2.xsd"
+           targetNamespace="http://guidewire.com/import2.xsd"
+           xmlns:imported="http://guidewire.com/import1.xsd">
+
+  <xs:import namespace="http://guidewire.com/import1.xsd" schemaLocation="import1.xsd"/>
+
+  <xs:element name="ElementFromImport2" type="imported:TypeFromImport1"/>
+
+  <xs:complexType name="TypeFromImport2">
+    <xs:sequence>
+      <xs:element name="String" type="xs:string" minOccurs="0"/>
+      <xs:element ref="imported:ElementFromImport1" minOccurs="0"/>
+      <xs:element ref="ElementFromImport2" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
